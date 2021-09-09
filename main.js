@@ -8,17 +8,7 @@ for (i = 1; i <= 9; i++) {
 
     for (j = 1; j <= 9; j++) {
         let cell = document.createElement("div"); // <div>
-
-        if (i === j) { // <div class="a b"
-            cell.setAttribute("class", "cell cell-main");            
-        }
-        else if (j < i) {
-            cell.setAttribute("class", "cell cell-omain")
-        }
-        else {
-            cell.setAttribute("class", "cell cell-umain");
-        }
-
+        cell.setAttribute("class", (i===j?"cell cell-main":j<i?"cell cell-omain":"cell cell-umain"))
         cell.innerText = i * j;
         row.appendChild(cell);
     }
